@@ -1,0 +1,1 @@
+Sample tests for [ScriptAPIOSS/setup-bds-action](https://github.com/ScriptAPIOSS/setup-bds-action)
