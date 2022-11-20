@@ -16,3 +16,6 @@ jobs:
           EULA_ACCEPT: true
           PP_ACCEPT: true
       - uses: ScriptAPIOSS/bds-gametest-run@v1
+      - name: Debugging
+        run: |
+          cat test_config.json
