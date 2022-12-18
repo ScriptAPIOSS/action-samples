@@ -17,6 +17,7 @@ jobs:
           EULA_ACCEPT: true
           PP_ACCEPT: true
       - uses:  ScriptAPIOSS/setup-resource-packs@v1
+        id: setup-packs
         with:
           TARGET_SOURCE_PATHS: |
             ./behavior_packs/**/
@@ -24,6 +25,12 @@ jobs:
       - name: Prepare resource packs
         run: |
           ls -la ${{ steps.setup-bds.outputs.DOWNLOAD_PATH }}/development_behavior_packs/
+          echo ""
+          echo ""
+          echo ${{ steps.setup-packs.outputs.DISCOVERED_MANIFESTS }}
+          echo ""
+          echo ""
+          echo ${{ steps.setup-packs.outputs.DISCOVERED_MANIFESTS }} | jq
 
       - uses: ScriptAPIOSS/bds-gametest-run-action@v1
         with:
