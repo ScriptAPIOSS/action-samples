@@ -39,4 +39,4 @@ jobs:
           PACKS: |
             ${{ toJson(steps.setup-packs.outputs.DISCOVERED_MANIFESTS) }}
           TEST_TAGS: |
-            ScriptAPIOSS
+            scriptapioss
