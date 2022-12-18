@@ -1,10 +1,11 @@
-name: 'setup-bds'
+name: 'run-tests'
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
 jobs:
-  setup:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
