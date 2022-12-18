@@ -16,22 +16,13 @@ jobs:
           BDS_CHANNEL: preview
           EULA_ACCEPT: true
           PP_ACCEPT: true
+      - uses:  ScriptAPIOSS/setup-resource-packs@v1
+        with:
+          TARGET_SOURCE_PATHS: |
+            ./behavior_packs/**/
+          TARGET_DEST_PATH: ${{ steps.setup-bds.outputs.DOWNLOAD_PATH }}/development_behavior_packs/
       - name: Prepare resource packs
         run: |
-          mkdir -p ${{ steps.setup-bds.outputs.DOWNLOAD_PATH }}/development_behavior_packs/
-
-          cd behavior_packs/
-
-          for d in */ ; do
-              [ -L "${d%/}" ] && continue
-              echo "Copying ${d}"
-              cd ..
-              cp -R behavior_packs/${d} ${{ steps.setup-bds.outputs.DOWNLOAD_PATH }}/development_behavior_packs/${d}
-              cd behavior_packs/
-          done
-          
-          cd ..
-
           ls -la ${{ steps.setup-bds.outputs.DOWNLOAD_PATH }}/development_behavior_packs/
 
       - uses: ScriptAPIOSS/bds-gametest-run-action@v1
