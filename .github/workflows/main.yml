@@ -38,3 +38,5 @@ jobs:
           TIMEOUT_TICKS: 1000
           PACKS: |
             ${{ toJson(steps.setup-packs.outputs.DISCOVERED_MANIFESTS) }}
+          TEST_TAGS: |
+            ScriptAPIOSS
