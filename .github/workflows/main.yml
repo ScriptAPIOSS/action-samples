@@ -7,14 +7,19 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: ScriptAPIOSS/setup-bds-action@v1
+        id: setup-bds
         with:
           BDS_VERSION: latest
           BDS_CHANNEL: preview
-
           EULA_ACCEPT: true
           PP_ACCEPT: true
+      - name: Prepare resource packs
+        run: |
+          cp -R behavior_packs/* ${{ steps.setup-bds.outputs.DOWNLOAD_PATH }}/development_behavior_packs/
+          ls -la ${{ steps.setup-bds.outputs.DOWNLOAD_PATH }}/development_behavior_packs/
       - uses: ScriptAPIOSS/bds-gametest-run-action@v1
         with:
-          BDS_PATH: './bds/'
-          TIMEOUT_TICKS: 60000
+          BDS_PATH: ${{ steps.setup-bds.outputs.DOWNLOAD_PATH }}
+          TIMEOUT_TICKS: 1000
