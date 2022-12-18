@@ -27,10 +27,10 @@ jobs:
           ls -la ${{ steps.setup-bds.outputs.DOWNLOAD_PATH }}/development_behavior_packs/
           echo ""
           echo ""
-          echo ${{ steps.setup-packs.outputs.DISCOVERED_MANIFESTS }}
+          echo ${{ toJson(steps.setup-packs.outputs.DISCOVERED_MANIFESTS) }}
           echo ""
           echo ""
-          echo ${{ steps.setup-packs.outputs.DISCOVERED_MANIFESTS }} | jq
+          echo ${{ toJson(steps.setup-packs.outputs.DISCOVERED_MANIFESTS) }} | jq
 
       - uses: ScriptAPIOSS/bds-gametest-run-action@v1
         with:
