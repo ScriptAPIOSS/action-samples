@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-
 jobs:
   setup:
     runs-on: ubuntu-latest
@@ -16,7 +15,6 @@ jobs:
           EULA_ACCEPT: true
           PP_ACCEPT: true
       - uses: ScriptAPIOSS/bds-gametest-run-action@v1
-      - name: Debugging
-        run: |
-          cat test_config.json
-
+        with:
+          BDS_PATH: './bds/'
+          TIMEOUT_TICKS: 60000
