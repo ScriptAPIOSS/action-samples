@@ -1,33 +1,23 @@
 {
   "format_version": 2,
   "header": {
-    "name": "GameTest",
-    "description": "GameTest",
-    "uuid": "00cfaf5e-4da5-c67d-2bdc-411abf3d4ccf",
-    "version": [1, 0, 0],
-    "min_engine_version": [1, 17, 0]
+    "description": "Debug Pack for Testing",
+    "name": "Debug Pack",
+    "uuid": "c71ae0ce-42de-4010-b58c-89796fd5ed87",
+    "version": [0, 0, 1],
+    "min_engine_version": [1, 14, 0]
   },
   "modules": [
     {
-      "type": "data",
-      "uuid": "25e1ed78-3c3b-f3b0-b2b1-e598a1044465",
-      "version": [1, 0, 0]
-    },
-    {
-      "type": "javascript",
-      "uuid": "f074bb06-239b-bcf9-b22b-d5c902b05181",
-      "version": [1, 0, 0],
+      "description": "Debug Pack for Testing",
+      "type": "script",
+      "uuid": "8d42d830-670a-406e-b630-89253f71b452",
+      "version": [0, 0, 1],
+      "language": "JavaScript",
       "entry": "scripts/Main.js"
     }
   ],
   "dependencies": [
-    {
-      "module_name": "@minecraft/server",
-      "version": "1.1.0-beta"
-    },
-    {
-      "module_name": "@minecraft/server-gametest",
-      "version": "1.0.0-beta"
-    }
+    {"module_name": "@minecraft/server-gametest", "version": "1.0.0-beta"}
   ]
 }

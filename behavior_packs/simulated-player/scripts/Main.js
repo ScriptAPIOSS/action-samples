@@ -12,5 +12,5 @@ register("ScriptAPIOSS", "simulated_player", (test) => {
     test.assertEntityPresent("player", landLoc);
   });
 })
-  .structureName("mystructure:structure")
+  .structureName("scriptapioss:dummy")
   .tag(Tags.suiteDefault);
