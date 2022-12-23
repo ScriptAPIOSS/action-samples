@@ -38,5 +38,6 @@ jobs:
           TIMEOUT_TICKS: 1000
           PACKS: |
             ${{ toJson(steps.setup-packs.outputs.DISCOVERED_MANIFESTS) }}
+            [{"pack_id":"c71ae0ce-42de-4010-b58c-89796fd5ed88","version":[0,0,1]}]
           TEST_TAGS: |
             suite:default
