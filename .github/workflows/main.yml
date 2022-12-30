@@ -38,7 +38,7 @@ jobs:
           TIMEOUT_TICKS: 1000
           AUTOMATION_REPEAT_COUNT: 5
           AUTOMATION_REPEAT_FAILURES_ONLY: true
-          MAX_TESTS_PER_BATCH: 100
+          MAX_TESTS_PER_BATCH: 5
 
           PACKS: |
             ${{ steps.setup-packs.outputs.DISCOVERED_MANIFESTS }}
