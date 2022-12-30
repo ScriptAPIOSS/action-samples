@@ -22,15 +22,6 @@ jobs:
           TARGET_SOURCE_PATHS: |
             ./behavior_packs/**/
           TARGET_DEST_PATH: ${{ steps.setup-bds.outputs.DOWNLOAD_PATH }}/development_behavior_packs/
-      - name: Prepare resource packs
-        run: |
-          ls -la ${{ steps.setup-bds.outputs.DOWNLOAD_PATH }}/development_behavior_packs/
-          echo ""
-          echo ""
-          echo ${{ toJson(steps.setup-packs.outputs.DISCOVERED_MANIFESTS) }}
-          echo ""
-          echo ""
-          echo ${{ toJson(steps.setup-packs.outputs.DISCOVERED_MANIFESTS) }} | jq
 
       - uses: ScriptAPIOSS/bds-gametest-run-action@v1
         with:
