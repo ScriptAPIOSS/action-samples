@@ -36,7 +36,7 @@ jobs:
         with:
           BDS_PATH: ${{ steps.setup-bds.outputs.DOWNLOAD_PATH }}
           TIMEOUT_TICKS: 1000
-          AUTOMATION_REPEAT_COUNT: 2
+          AUTOMATION_REPEAT_COUNT: 5
           AUTOMATION_REPEAT_FAILURES_ONLY: true
           MAX_TESTS_PER_BATCH: 100
 
